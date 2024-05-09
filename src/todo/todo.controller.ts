@@ -6,7 +6,7 @@ export class TodoController {
 	constructor(private readonly todoService: TodoService) {}
 
 	@Get()
-	getHello(): string {
-		return this.todoService.getTodoList();
+	async getTodoList() {
+		return await this.todoService.getAll();
 	}
 }
