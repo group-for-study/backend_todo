@@ -15,4 +15,8 @@ export class TodoService {
 	async getAll(): Promise<TodoList[]> {
 		return this.todoModel.find().exec();
 	}
+
+	async deleteTodoList(id: string) {
+		return this.todoModel.deleteOne({ _id: id });
+	}
 }
